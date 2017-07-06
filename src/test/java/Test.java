@@ -7,5 +7,6 @@ public class Test {
 
     public static void main(){
         StringUtils.trimToNull(null);
+        System.out.print(112);
     }
 }
