@@ -316,6 +316,12 @@ public class StringClass {
         return false;
     }
 
+    /**
+     * 判断字符串是否是数字
+     */
+    public static boolean isNumber(String value) {
+        return isInt(value) || isDouble(value);
+    }
 
     public static void main(String[] args){
 
