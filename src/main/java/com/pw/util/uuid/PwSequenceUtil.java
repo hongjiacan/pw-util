@@ -6,7 +6,7 @@ import java.util.UUID;
 /**
  * Created by PoemWhite on 2017/4/25.
  */
-public class SequenceUtil {
+public class PwSequenceUtil {
 
     private static SecureRandom random = new SecureRandom();
 
@@ -45,26 +45,4 @@ public class SequenceUtil {
         // d 代表参数为正数型
         return machineId + String.format("%015d", hashCodeV);
     }
-
-    public static void main(String []args){
-        System.out.println(uuid());
-        System.out.println(uuid2());
-
-        new Thread() {
-            public void run() {
-                while (true) {
-                    try {
-                        System.out.println(uuid16());
-
-                        //休眠两秒
-                        Thread.sleep(1 * 1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
-        }.start();
-    }
-
-
 }

@@ -17,7 +17,7 @@ import java.util.Iterator;
 /**
  * Created by PoemWhite on 2017/5/8.
  */
-public class ImageUtil {
+public class PwImageUtil {
 
     /*
      * 根据尺寸图片居中裁剪

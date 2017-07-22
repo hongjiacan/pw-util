@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  * Created by PoemWhite on 2017/7/7.
  * refer to http://blog.csdn.net/pttaag/article/details/5912171
  */
-public class MathUtil {
+public class PwMathUtil {
 
     //默认除法运算精度
     private static final int DEF_DIV_SCALE = 2;

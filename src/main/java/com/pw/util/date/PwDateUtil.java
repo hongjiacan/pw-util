@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by PoemWhite on 2017/7/10.
  */
-public class DateUtil {
+public class PwDateUtil {
 
     /**
      * 日期字符串格式转化

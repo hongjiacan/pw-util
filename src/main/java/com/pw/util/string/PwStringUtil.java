@@ -9,9 +9,9 @@ import java.util.StringTokenizer;
 /**
  * Created by PoemWhite on 2017/4/24.
  */
-public class StringClass {
+public class PwStringUtil {
 
-    private StringClass() {
+    private PwStringUtil() {
 
     }
     /**
@@ -69,7 +69,7 @@ public class StringClass {
      * @return int
      */
     public static int getInt(String string) {
-        string = StringClass.getString(string);
+        string = PwStringUtil.getString(string);
         string = (string == "") ? "0" : string;
         int result;
         try {
@@ -86,7 +86,7 @@ public class StringClass {
      * @return float
      */
     public static float getFloat(String string) {
-        string = StringClass.getString(string);
+        string = PwStringUtil.getString(string);
         string = (string == "") ? "0" : string;
         float result = 0;
         try {
@@ -103,7 +103,7 @@ public class StringClass {
      * @return double
      */
     public static double getDouble(String string) {
-        string = StringClass.getString(string);
+        string = PwStringUtil.getString(string);
         string = (string == "") ? "0" : string;
         double result = 0;
         try {
@@ -120,7 +120,7 @@ public class StringClass {
      * @return
      */
     public static long getLong(String string) {
-        string = StringClass.getString(string);
+        string = PwStringUtil.getString(string);
         string = (string == "") ? "0" : string;
         long result = 0;
         try {
@@ -225,7 +225,7 @@ public class StringClass {
      * @return String
      */
     public static String getFormatPath(String path) {
-        path=StringClass.getTrimString(path);
+        path= PwStringUtil.getTrimString(path);
         if(path.equals("")){
             return path;
         }

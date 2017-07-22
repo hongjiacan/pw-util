@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Created by PoemWhite on 2017/4/25.
  */
-public class XmlUtil {
+public class PwXmlUtil {
 
     /**
      * 解析xml,返回第一级元素键值对。如果第一级元素有子节点，则此节点的值是子节点的xml数据。
@@ -48,7 +48,7 @@ public class XmlUtil {
             if(children.isEmpty()) {
                 v = e.getTextNormalize();
             } else {
-                v = XmlUtil.getChildrenText(children);
+                v = PwXmlUtil.getChildrenText(children);
             }
 
             m.put(k, v);
@@ -76,7 +76,7 @@ public class XmlUtil {
                 List list = e.getChildren();
                 sb.append("<" + name + ">");
                 if(!list.isEmpty()) {
-                    sb.append(XmlUtil.getChildrenText(list));
+                    sb.append(PwXmlUtil.getChildrenText(list));
                 }
                 sb.append(value);
                 sb.append("</" + name + ">");

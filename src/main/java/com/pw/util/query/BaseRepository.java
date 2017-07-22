@@ -1,6 +1,6 @@
 package com.pw.util.query;
 
-import com.pw.util.string.StringClass;
+import com.pw.util.string.PwStringUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -145,7 +145,7 @@ public abstract class BaseRepository {
 
         List<T> list = new ArrayList<T>();
 
-        if(select!=null && !"".equals(StringClass.getString(select.getSql()))){
+        if(select!=null && !"".equals(PwStringUtil.getString(select.getSql()))){
 
             list = this.queryForBeanList(select.getSql(),select.getParameters(),pojoClass);
             if(select instanceof PageSelect){
@@ -163,13 +163,13 @@ public abstract class BaseRepository {
 
         Map map = this.queryForMap(recordCountSelect.getSql(),recordCountSelect.getParameters());
 
-        return Integer.parseInt(StringClass.getString(map.get(RecordCountSelect.RECORD_COUNT)));
+        return Integer.parseInt(PwStringUtil.getString(map.get(RecordCountSelect.RECORD_COUNT)));
     }
 
     public String getSysdate(){
         Map map = this.queryForMap("select date_format(now(),'%Y-%m-%d %H:%i:%s') sysdate from dual",null);
         if(map != null){
-            return StringClass.getString(map.get("sysdate"));
+            return PwStringUtil.getString(map.get("sysdate"));
         }
         return "";
     }
@@ -177,7 +177,7 @@ public abstract class BaseRepository {
     public String getSysdate(String format){
         Map map = this.queryForMap("select date_format(now(),?) sysdate from dual",new Object[]{format});
         if(map != null){
-            return StringClass.getString(map.get("sysdate"));
+            return PwStringUtil.getString(map.get("sysdate"));
         }
         return "";
     }
