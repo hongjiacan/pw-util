@@ -1,6 +1,6 @@
 package com.pw.util.query;
 
-import com.pw.util.constant.PwConstant;
+import com.pw.util.support.constant.PwConstant;
 
 import java.util.ArrayList;
 import java.util.List;

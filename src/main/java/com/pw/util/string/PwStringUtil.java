@@ -1,5 +1,8 @@
 package com.pw.util.string;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -10,6 +13,8 @@ import java.util.StringTokenizer;
  * Created by PoemWhite on 2017/4/24.
  */
 public class PwStringUtil {
+
+    public static Log logger = LogFactory.getLog(PwStringUtil.class);
 
     private PwStringUtil() {
 
@@ -141,7 +146,7 @@ public class PwStringUtil {
         try{
             string = (string == null) ? "" : new String(string.getBytes("ISO-8859-1"), encoding);
         }catch(UnsupportedEncodingException e){
-            e.printStackTrace();
+            logger.error(e);
         }
         return string;
     }
@@ -157,7 +162,7 @@ public class PwStringUtil {
         try{
             string = (string == null) ? "" : new String(string.getBytes(oldEncoding), newEncoding);
         }catch(UnsupportedEncodingException e){
-            e.printStackTrace();
+            logger.error(e);
         }
         return string;
     }
@@ -171,7 +176,7 @@ public class PwStringUtil {
         try{
             string = (string == null) ? "" : new String(string.getBytes("ISO-8859-1"), "GBK");
         }catch(UnsupportedEncodingException e){
-            e.printStackTrace();
+            logger.error(e);
         }
         return string;
     }
@@ -185,7 +190,7 @@ public class PwStringUtil {
         try{
             string = (string == null) ? "" : new String(string.getBytes("GBK"), "ISO-8859-1");
         }catch(Exception e){
-            e.printStackTrace();
+            logger.error(e);
         }
         return string;
     }
@@ -199,7 +204,7 @@ public class PwStringUtil {
         try {
             string= URLDecoder.decode(string,"utf-8");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace() ;
+            logger.error(e);
         }
         return string;
     }
@@ -213,7 +218,7 @@ public class PwStringUtil {
         try {
             string= URLEncoder.encode(string, "utf-8");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
         return string;
     }
@@ -237,6 +242,17 @@ public class PwStringUtil {
 //        	path=fileFlag+path.substring("file://".length());
 //        }
         return path;
+    }
+
+    public static String getFormatpathNoFileStart(String filename1){
+        filename1 = getFormatPath(filename1);
+        if(filename1.equals("")){
+            return "";
+        }
+        if(filename1.startsWith("file:/")){
+            filename1=filename1.replaceFirst("file:/", "");
+        }
+        return filename1;
     }
 
 
@@ -322,6 +338,51 @@ public class PwStringUtil {
     public static boolean isNumber(String value) {
         return isInt(value) || isDouble(value);
     }
+
+    /**
+     * 取得longstring中从最后一个str开始到longstring结束的字符串
+     *
+     * @param longstring
+     * @param shortstring
+     * @return String  如果longstring不包含shortstring没有则返回""
+     */
+    public static String getLastString(String longstring, String shortstring) {
+        int i = longstring.indexOf(shortstring);
+        if (i > -1){
+            return (longstring.substring((longstring.lastIndexOf(shortstring)) + 1,
+                    longstring.length()));
+        }else{
+            return "";
+        }
+    }
+
+    /**
+     * 取得longstring中从开始到最后一个str字符串
+     *
+     * @param longstring
+     * @param shortstring
+     * @return String 如果longstring不包含shortstring则返回longstring
+     */
+    public static String getPreString(String longstring, String shortstring) {
+        int i = 0;
+        try{
+            i = longstring.indexOf(shortstring);
+        }catch(Exception e){
+            return (longstring);
+        }
+        if (i > -1) {
+            String newstring="";
+            try {
+                newstring=longstring.substring(0, longstring.lastIndexOf(shortstring));
+            }catch(Exception e) {
+                return longstring;
+            }
+            return newstring;
+        }else {
+            return longstring;
+        }
+    }
+
 
     public static void main(String[] args){
 

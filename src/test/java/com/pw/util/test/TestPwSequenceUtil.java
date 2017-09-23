@@ -16,10 +16,10 @@ public class TestPwSequenceUtil {
             public void run() {
                 while (true) {
                     try {
-                        System.out.println(PwSequenceUtil.uuid16());
+                        System.out.println(PwSequenceUtil.uuid());
 
                         //休眠两秒
-                        Thread.sleep(1 * 1000);
+                        Thread.sleep(2 * 1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
