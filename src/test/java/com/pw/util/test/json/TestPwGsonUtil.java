@@ -83,13 +83,23 @@ public class TestPwGsonUtil {
         System.out.println(response);
     }
 
+    public static void testJson6(){
+
+        String json = "{\"db\":1}";
+
+        JsonBean jsonBean = PwGsonUtil.parseJson(json, JsonBean.class);
+
+        System.out.println(jsonBean.toString());
+    }
+
     public static void main(String []args){
 
 //        testJson1();
 //        testJson2();
 //        testJson3();
 //        testJson4();
-        testJson5();
+//        testJson5();
+        testJson6();
     }
 
 }

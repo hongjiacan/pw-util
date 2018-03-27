@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class JsonBean {
 
+    private double db;
     private String uuid;
     private String name;
     private List<String> stringList;
@@ -30,6 +31,14 @@ public class JsonBean {
                     "url='" + url + '\'' +
                     '}';
         }
+    }
+
+    public double getDb() {
+        return db;
+    }
+
+    public void setDb(double db) {
+        this.db = db;
     }
 
     public String getUuid() {
@@ -67,7 +76,8 @@ public class JsonBean {
     @Override
     public String toString() {
         return "JsonBean{" +
-                "uuid='" + uuid + '\'' +
+                "db=" + db +
+                ", uuid='" + uuid + '\'' +
                 ", name='" + name + '\'' +
                 ", stringList=" + stringList +
                 ", subList=" + subList +

@@ -1,0 +1,10 @@
+package com.pw.util.result;
+
+/**
+ * Created by PoemWhite on 2018/3/22.
+ */
+public interface IBusiResult {
+
+    public boolean isSuccess();
+    public String toString();
+}

@@ -5,7 +5,7 @@ import com.pw.util.support.constant.PwConstant;
 /**
  * Created by PoemWhite on 2017/8/2.
  */
-public class BusiResult {
+public class BusiResult implements IBusiResult{
 
     /**
      * 结果
