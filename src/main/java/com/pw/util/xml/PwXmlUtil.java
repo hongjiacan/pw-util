@@ -89,15 +89,15 @@ public class PwXmlUtil {
     public static void main(String[] args) throws JDOMException, IOException {
 
         String xml = "<xml>"
-                + "<return_code><![CDATA[SUCCESS]]></return_code>"
-                + "<return_msg><![CDATA[OK]]></return_msg>"
-                + "<appid><![CDATA[wx2421b1c4370ec43b]]></appid>"
-                + "<mch_id><![CDATA[10000100]]></mch_id>"
-                + "<nonce_str><![CDATA[IITRi8Iabbblz1Jc]]></nonce_str>"
-                + "<sign><![CDATA[7921E432F65EB8ED0CE9755F0E86D72F]]></sign>"
-                + "<result_code><![CDATA[SUCCESS]]></result_code>"
-                + "<prepay_id><![CDATA[wx201411101639507cbf6ffd8b0779950874]]></prepay_id>"
-                + "<trade_type><![CDATA[JSAPI]]></trade_type>"
+                + "<return_code><![CDATA[111]]></return_code>"
+                + "<return_msg><![CDATA[222]]></return_msg>"
+                + "<appid><![CDATA[333]]></appid>"
+                + "<mch_id><![CDATA[444]]></mch_id>"
+                + "<nonce_str><![CDATA[555]]></nonce_str>"
+                + "<sign><![CDATA[666]]></sign>"
+                + "<result_code><![CDATA[777]]></result_code>"
+                + "<prepay_id><![CDATA[888]]></prepay_id>"
+                + "<trade_type><![CDATA[999]]></trade_type>"
                 + "</xml>";
 
 

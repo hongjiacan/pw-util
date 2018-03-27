@@ -91,19 +91,11 @@ public class PwInputStreamUtil {
 //	}
 
     /**
-     *
      * 方法说明：把InputStream转换成encoding类型的字符串
-     *
-     * Author：        shiwei
-     * Create Date：   Aug 30, 2012 6:35:33 PM
-     * History:  Aug 30, 2012 6:35:33 PM   shiwei   Created.
-     *
      * @param inputStream
      * @param encoding
      * @return
-     * @throws UnsupportedEncodingException
      * @throws IOException
-     *
      */
     public static String getContentsAsString(InputStream inputStream, String encoding) throws IOException{
         String string="";
@@ -175,16 +167,9 @@ public class PwInputStreamUtil {
     }
 
     /**
-     *
      * 方法说明：将byte[] 转化为 InputStream
-     *
-     * Author：        shiwei
-     * Create Date：   Aug 30, 2012 6:36:03 PM
-     * History:  Aug 30, 2012 6:36:03 PM   shiwei   Created.
-     *
      * @param theBytes
      * @return
-     *
      */
     public static InputStream bytesToInputStream(byte[] theBytes){
         return new ByteArrayInputStream(theBytes);
