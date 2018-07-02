@@ -1,4 +1,4 @@
-package com.pw.util.secret.md5;
+package com.pw.util.secret.encrypt;
 
 import java.security.MessageDigest;
 
@@ -24,7 +24,7 @@ public class PwMd5Util {
         return hexDigits[d1] + hexDigits[d2];
     }
 
-    public static String MD5Encode(String origin, String charset) {
+    public static String encrypt(String origin, String charset) {
         String resultString = null;
         try {
             resultString = new String(origin);
@@ -40,9 +40,9 @@ public class PwMd5Util {
         return resultString;
     }
 
-    public static String MD5Encode(String origin) {
+    public static String encrypt(String origin) {
 
-        return MD5Encode(origin, "UTF-8");
+        return encrypt(origin, "UTF-8");
     }
 
     private static final String hexDigits[] = { "0", "1", "2", "3", "4", "5",

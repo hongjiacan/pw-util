@@ -1,6 +1,6 @@
 package com.pw.util.secret.sign;
 
-import com.pw.util.secret.md5.PwMd5Util;
+import com.pw.util.secret.encrypt.PwMd5Util;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ public class PwSignUtil {
             }
         }
         sb.append("key=" + key);
-        String sign = PwMd5Util.MD5Encode(sb.toString(), SignConfig.characterEncoding).toUpperCase();
+        String sign = PwMd5Util.encrypt(sb.toString(), SignConfig.characterEncoding).toUpperCase();
 
         return sign;
     }
